@@ -58,10 +58,12 @@ async function handlePullRequestOpened({ octokit, payload }) {
 // When your app receives a webhook event from GitHub with
 // a `X-GitHub-Event` header value of `pull_request` and an `action` payload value of `opened`,
 // it calls the `handlePullRequestOpened` event handler that is defined above.
-app.webhooks.on("pull_request.opened", handlePullRequestOpened);
 app.webhooks.onAny(({ id, name, payload }) => {
-  console.log(`Received a ${name} event for #${payload.pull_request.number}`);
+  console.log(
+    `${id}: Received a ${name} event for #${payload.pull_request.number}`
+  );
 });
+app.webhooks.on("pull_request.opened", handlePullRequestOpened);
 
 // This logs any errors that occur.
 app.webhooks.onError((error) => {
