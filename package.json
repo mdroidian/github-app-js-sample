@@ -8,12 +8,14 @@
     "lint": "standard"
   },
   "devDependencies": {
-    "smee-client": "^1.2.3",
+    "smee-client": "^1.2.5",
     "standard": "^17.0.0",
     "vite": "^4.5.3"
   },
   "dependencies": {
-    "dotenv": "^16.0.3",
-    "octokit": "^3.1.2"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "octokit": "^3.2.0",
+    "typescript": "^5.4.5"
   }
 }
